@@ -67,9 +67,8 @@ python leaflens.py
 Apoi, în aplicație:
 
 1. Apasă **Alege poza** și selectează o fotografie clară, de aproape, cu o frunză.
-2. Apasă **Analizează**.
-3. Vezi rezultatul (planta detectată, boala/starea de sănătate, nivelul de încredere și sfatul agricol asociat).
-4. Opțional, apasă **Salvează PDF** pentru a exporta un raport al analizei.
+2. Vezi rezultatul (planta detectată, boala/starea de sănătate și sfatul agricol asociat).
+3. Opțional, apasă **Salvează PDF** pentru a exporta un raport al analizei.
 
 ## Date de antrenare
 
@@ -81,7 +80,7 @@ Modelul de clasificare a fost antrenat folosind o combinație a următoarelor se
 - Sunflower Fruits and Leaves
 - Wheat Disease Dataset
 
-*(Notebook-ul folosit pentru antrenarea modelului urmează să fie adăugat în repository.)*
+*(Notebook-ul folosit pentru antrenarea modelului este adăugat în repository.)*
 
 ## Autori
 
