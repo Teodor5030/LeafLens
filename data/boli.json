@@ -1,0 +1,110 @@
+{
+    "Apple_scab": {
+        "ro": "Rapan",
+        "en": "Apple Scab"
+    },
+    "Black_rot": {
+        "ro": "Putregai negru",
+        "en": "Black Rot"
+    },
+    "Cedar_apple_rust": {
+        "ro": "Rugina marului",
+        "en": "Cedar Apple Rust"
+    },
+    "Powdery_mildew": {
+        "ro": "Fainare",
+        "en": "Powdery Mildew"
+    },
+    "Cercospora_leaf_spot Gray_leaf_spot": {
+        "ro": "Pata cercosporeana",
+        "en": "Gray Leaf Spot"
+    },
+    "Common_rust_": {
+        "ro": "Rugina comuna",
+        "en": "Common Rust"
+    },
+    "Northern_Leaf_Blight": {
+        "ro": "Arsura nordica a frunzelor",
+        "en": "Northern Leaf Blight"
+    },
+    "Esca_(Black_Measles)": {
+        "ro": "Esca",
+        "en": "Esca (Black Measles)"
+    },
+    "Leaf_blight_(Isariopsis_Leaf_Spot)": {
+        "ro": "Arsura foliara",
+        "en": "Leaf Blight"
+    },
+    "Haunglongbing_(Citrus_greening)": {
+        "ro": "Huanglongbing",
+        "en": "Citrus Greening"
+    },
+    "Bacterial_spot": {
+        "ro": "Pata bacteriana",
+        "en": "Bacterial Spot"
+    },
+    "Early_blight": {
+        "ro": "Alternarioza",
+        "en": "Early Blight"
+    },
+    "Late_blight": {
+        "ro": "Mana",
+        "en": "Late Blight"
+    },
+    "Leaf_Mold": {
+        "ro": "Mucegaiul frunzelor",
+        "en": "Leaf Mold"
+    },
+    "Septoria_leaf_spot": {
+        "ro": "Septorioza",
+        "en": "Septoria Leaf Spot"
+    },
+    "Spider_mites Two-spotted_spider_mite": {
+        "ro": "Acarieni",
+        "en": "Spider Mites"
+    },
+    "Target_Spot": {
+        "ro": "Pata tinta",
+        "en": "Target Spot"
+    },
+    "Tomato_Yellow_Leaf_Curl_Virus": {
+        "ro": "Virusul ingalbenirii frunzelor",
+        "en": "Yellow Leaf Curl Virus"
+    },
+    "Tomato_mosaic_virus": {
+        "ro": "Virusul mozaic",
+        "en": "Mosaic Virus"
+    },
+    "Leaf_scorch": {
+        "ro": "Arsura frunzelor",
+        "en": "Leaf Scorch"
+    },
+    "BrownRust": {
+        "ro": "Rugina bruna",
+        "en": "Brown Rust"
+    },
+    "Mildew": {
+        "ro": "Mana",
+        "en": "Mildew"
+    },
+    "Septoria": {
+        "ro": "Septorioza",
+        "en": "Septoria"
+    },
+    "YellowRust": {
+        "ro": "Rugina galbena",
+        "en": "Yellow Rust"
+    },
+    "Downy_mildew": {
+        "ro": "Mana",
+        "en": "Downy Mildew"
+    },
+    "Gray_mold": {
+        "ro": "Mucegai cenusiu",
+        "en": "Gray Mold"
+    },
+    "Leaf_scars": {
+        "ro": "Cicatrici pe frunze",
+        "en": "Leaf Scars"
+    }
+}

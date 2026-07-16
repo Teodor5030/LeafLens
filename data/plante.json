@@ -1,0 +1,66 @@
+{
+    "Apple": {
+        "ro": "Mar",
+        "en": "Apple"
+    },
+    "Blueberry": {
+        "ro": "Afin",
+        "en": "Blueberry"
+    },
+    "Cherry_(including_sour)": {
+        "ro": "Cires",
+        "en": "Cherry"
+    },
+    "Corn_(maize)": {
+        "ro": "Porumb",
+        "en": "Corn"
+    },
+    "Grape": {
+        "ro": "Vita-de-vie",
+        "en": "Grape"
+    },
+    "Orange": {
+        "ro": "Portocal",
+        "en": "Orange"
+    },
+    "Peach": {
+        "ro": "Piersic",
+        "en": "Peach"
+    },
+    "Pepper,_bell": {
+        "ro": "Ardei gras",
+        "en": "Bell Pepper"
+    },
+    "Potato": {
+        "ro": "Cartof",
+        "en": "Potato"
+    },
+    "Raspberry": {
+        "ro": "Zmeur",
+        "en": "Raspberry"
+    },
+    "Soybean": {
+        "ro": "Soia",
+        "en": "Soybean"
+    },
+    "Squash": {
+        "ro": "Dovleac",
+        "en": "Squash"
+    },
+    "Strawberry": {
+        "ro": "Capsun",
+        "en": "Strawberry"
+    },
+    "Tomato": {
+        "ro": "Rosie",
+        "en": "Tomato"
+    },
+    "Wheat": {
+        "ro": "Grau",
+        "en": "Wheat"
+    },
+    "Sunflower": {
+        "ro": "Floarea-soarelui",
+        "en": "Sunflower"
+    }
+}

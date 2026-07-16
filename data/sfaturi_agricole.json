@@ -1,0 +1,114 @@
+{
+    "healthy": {
+        "ro": "Planta arata sanatoasa! Continua cu ingrijirea regulata.",
+        "en": "The plant looks healthy! Keep up the regular care."
+    },
+    "Apple_scab": {
+        "ro": "Rapan - indeparteaza frunzele afectate si aplica fungicide cu cupru.",
+        "en": "Apple scab - remove affected leaves and apply copper-based fungicides."
+    },
+    "Black_rot": {
+        "ro": "Putregaiul negru - taie si arunca fructele afectate, trateaza cu fungicide.",
+        "en": "Black rot - cut off and discard affected fruit, treat with fungicides."
+    },
+    "Cedar_apple_rust": {
+        "ro": "Rugina marului - tratament preventiv cu fungicide la inceputul primaverii.",
+        "en": "Cedar apple rust - apply preventive fungicide treatment in early spring."
+    },
+    "Powdery_mildew": {
+        "ro": "Fainare - aeriseste mai bine zona si aplica fungicide cu sulf.",
+        "en": "Powdery mildew - improve air circulation and apply sulfur-based fungicides."
+    },
+    "Cercospora_leaf_spot Gray_leaf_spot": {
+        "ro": "Pata Cercospora - aplica fungicide si nu uda frunzele direct.",
+        "en": "Gray leaf spot - apply fungicides and avoid wetting the leaves directly."
+    },
+    "Common_rust_": {
+        "ro": "Rugina comuna - fungicide si pe viitor alege soiuri mai rezistente.",
+        "en": "Common rust - apply fungicides and choose more resistant varieties going forward."
+    },
+    "Northern_Leaf_Blight": {
+        "ro": "Helminthosporium - aplica fungicide si schimba culturile periodic.",
+        "en": "Northern leaf blight - apply fungicides and rotate crops periodically."
+    },
+    "Esca_(Black_Measles)": {
+        "ro": "Esca vitei de vie - taie partile afectate si dezinfecteaza uneltele.",
+        "en": "Esca (grapevine trunk disease) - cut out affected wood and disinfect your tools."
+    },
+    "Leaf_blight_(Isariopsis_Leaf_Spot)": {
+        "ro": "Arsura foliara - aplica fungicide pe baza de cupru, elimina frunzele afectate.",
+        "en": "Leaf blight - apply copper-based fungicides and remove affected leaves."
+    },
+    "Haunglongbing_(Citrus_greening)": {
+        "ro": "Huanglongbing - boala foarte grava! Contactati urgent un specialist.",
+        "en": "Huanglongbing (citrus greening) - very serious disease! Contact a specialist urgently."
+    },
+    "Bacterial_spot": {
+        "ro": "Pata bacteriana - tratament cu bactericide pe baza de cupru.",
+        "en": "Bacterial spot - treat with copper-based bactericides."
+    },
+    "Early_blight": {
+        "ro": "Alternaria - fungicide preventiv si curata frunzele cazute de jos.",
+        "en": "Early blight - apply preventive fungicide and clear fallen leaves from the ground."
+    },
+    "Late_blight": {
+        "ro": "Mana - foarte agresiva! Tratament urgent cu fungicide sistemice.",
+        "en": "Late blight - very aggressive! Urgent treatment with systemic fungicides."
+    },
+    "Leaf_Mold": {
+        "ro": "Mucegaiul frunzelor - reduceti umiditatea si imbunatatiti ventilatia.",
+        "en": "Leaf mold - reduce humidity and improve ventilation."
+    },
+    "Septoria_leaf_spot": {
+        "ro": "Septorioza - fungicide si nu uda plantele de sus.",
+        "en": "Septoria leaf spot - apply fungicides and avoid overhead watering."
+    },
+    "Spider_mites Two-spotted_spider_mite": {
+        "ro": "Acarieni - tratati cu acaricide sau sapun insecticid diluat.",
+        "en": "Spider mites - treat with miticides or diluted insecticidal soap."
+    },
+    "Target_Spot": {
+        "ro": "Pata tinta - fungicide si curatati resturile vegetale de la sol.",
+        "en": "Target spot - apply fungicides and clear plant debris from the ground."
+    },
+    "Tomato_Yellow_Leaf_Curl_Virus": {
+        "ro": "Virus ingalbenire - combateti musculita alba cu insecticide.",
+        "en": "Yellow leaf curl virus - control the whitefly vector with insecticides."
+    },
+    "Tomato_mosaic_virus": {
+        "ro": "Virus mozaic - nu exista tratament, scoateti plantele bolnave.",
+        "en": "Mosaic virus - no treatment available, remove infected plants."
+    },
+    "Leaf_scorch": {
+        "ro": "Arsura frunzelor - udati mai regulat si mulciti solul.",
+        "en": "Leaf scorch - water more regularly and mulch the soil."
+    },
+    "BrownRust": {
+        "ro": "Rugina bruna la grau - fungicide sistemice, monitorizare frecventa in perioadele umede.",
+        "en": "Brown rust in wheat - systemic fungicides, monitor closely during humid periods."
+    },
+    "Mildew": {
+        "ro": "Mana la grau - fungicide preventive, evitati irigarea excesiva de sus.",
+        "en": "Wheat mildew - preventive fungicides, avoid excessive overhead irrigation."
+    },
+    "Septoria": {
+        "ro": "Septorioza la grau - fungicide si monitorizare in perioadele umede.",
+        "en": "Wheat septoria - fungicides and monitoring during humid periods."
+    },
+    "YellowRust": {
+        "ro": "Rugina galbena la grau - foarte contagioasa, fungicide urgente si soiuri rezistente pe viitor.",
+        "en": "Yellow rust in wheat - highly contagious, urgent fungicide treatment and resistant varieties going forward."
+    },
+    "Downy_mildew": {
+        "ro": "Mana la floarea-soarelui - fungicide sistemice si rotatia culturilor.",
+        "en": "Sunflower downy mildew - systemic fungicides and crop rotation."
+    },
+    "Gray_mold": {
+        "ro": "Mucegai cenusiu - indepartati partile afectate si imbunatatiti ventilatia.",
+        "en": "Gray mold - remove affected parts and improve ventilation."
+    },
+    "Leaf_scars": {
+        "ro": "Cicatrici pe frunze - de obicei fara tratament, verificati daca apar si alte simptome.",
+        "en": "Leaf scars - usually no treatment needed, check for other symptoms."
+    }
+}
