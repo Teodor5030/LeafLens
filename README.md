@@ -15,7 +15,7 @@ Se adresează în primul rând fermierilor mici, grădinarilor amatori și elevi
 - Mod ecran complet (F11)
 ## Comparație cu alte aplicații
 Există deja aplicații cunoscute pe zona asta — Plantix, PlantNet, Plant.id și altele asemănătoare. Toate rulează în cloud (trimit poza pe un server), iar PlantNet e axat pe identificarea speciei, nu pe boli. Niciuna nu oferă un raport exportabil cu rezultatul analizei.
-LeafLens rulează complet local, o dată instalat: nicio poză nu iese de pe calculator. E gratuit, generează un raport PDF cu toate cele trei variante posibile și sfaturile aferente, și codul e public pe GitHub. În schimb, acoperă mai puține specii (în jur de 15) față de aplicațiile comerciale mari — firesc pentru un proiect făcut de doi elevi, nu de o echipă comercială.
+LeafLens rulează complet local, o dată instalat: nicio poză nu iese de pe calculator. E gratuit, generează un raport PDF cu toate cele trei variante posibile și sfaturile aferente, și codul e public pe GitHub. În schimb, acoperă mai puține specii (în jur de 15) față de aplicațiile comerciale mari 
 ## Cerințe
 - Python 3.13.3
 - Librăriile din `requirements.txt`
