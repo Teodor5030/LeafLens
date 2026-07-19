@@ -4,7 +4,7 @@ Proiect realizat de **Marina Teodor** și **Ignat Eduard**, elevi ai Colegiului 
 
 ## Distribuția sarcinilor
 
-**Teodor** — partea de AI: pregătirea datelor, antrenarea modelului principal de clasificare (transfer learning pe EfficientNetV2B0) și a filtrului separat „este / nu este frunză" (transfer learning pe MobileNetV2), integrarea modelelor în aplicație și generarea raportului PDF.
+**Teodor** — partea de AI: pregătirea datelor, antrenarea modelului principal de clasificare (transfer learning pe EfficientNetV2B0) și a filtrului separat „este / nu este frunză", integrarea modelelor în aplicație și generarea raportului PDF.
 
 **Edi** — interfața grafică realizată în Tkinter: structura ferestrei, butoanele, cardurile de predicție, comutarea de limbă și modul ecran complet.
 
