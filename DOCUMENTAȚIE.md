@@ -51,13 +51,166 @@ Element comun al acestui public: are nevoie de un răspuns rapid, ieftin și fă
 
 ## 5. Arhitectura aplicației
 
-Aplicația este scrisă în **Python**, cu interfața grafică realizată în **Tkinter**, biblioteca standard inclusă în Python — aceasta a fost o alegere deliberată pentru a păstra instalarea simplă, fără dependențe grafice suplimentare.
-
-Procesarea imaginii se face în doi pași, folosind două modele separate, antrenate cu **TensorFlow/Keras**:
-
-1. **Modelul de detectare a frunzei** (`leaf_detector.keras`) — construit pe arhitectura **MobileNetV2**, un model mic și rapid, folosit ca filtru: verifică binar dacă imaginea conține o frunză, înainte ca aceasta să ajungă la modelul principal.
-2. **Modelul principal de clasificare** (`best_model.keras`) — construit pe arhitectura **EfficientNetV2B0**, antrenat prin transfer learning pe o combinație de seturi de date publice, pentru a recunoaște boala și specia plantei.
-
+## 5.1. Modelele folosite
+ 
+LeafLens combină două modele separate:
+ 
+| Model | Rol | Arhitectură | Fișier |
+|---|---|---|---|
+| Clasificator principal | Identifică planta și boala/starea de sănătate | EfficientNetV2B0 (47 clase) | `best_model.keras` |
+| Detector de frunză | Verifică dacă imaginea încărcată conține chiar o frunză, înainte de a rula clasificatorul principal | MobileNetV2 (clasificare binară) | `leaf_detector.keras` |
+ 
+Ambele modele au fost antrenate în notebook-ul `leaf-lens-final-final.ipynb`, inclus în repository.
+ 
+## 5.2. Performanța clasificatorului principal pe setul de validare
+ 
+Raportul de clasificare (precizie / recall / f1-score) obținut pe setul de validare, pentru toate cele 47 de clase:
+ 
+| Clasă | Precizie | Recall | F1-score | Nr. imagini |
+|---|---|---|---|---|
+| Apple___Apple_scab | 1.00 | 0.97 | 0.98 | 505 |
+| Apple___Black_rot | 0.99 | 1.00 | 1.00 | 497 |
+| Apple___Cedar_apple_rust | 1.00 | 1.00 | 1.00 | 441 |
+| Apple___healthy | 0.97 | 1.00 | 0.98 | 502 |
+| Blueberry___healthy | 1.00 | 1.00 | 1.00 | 454 |
+| Cherry_(including_sour)___Powdery_mildew | 1.00 | 1.00 | 1.00 | 421 |
+| Cherry_(including_sour)___healthy | 0.99 | 1.00 | 1.00 | 456 |
+| Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | 0.98 | 0.90 | 0.94 | 410 |
+| Corn_(maize)___Common_rust_ | 1.00 | 0.99 | 0.99 | 478 |
+| Corn_(maize)___Northern_Leaf_Blight | 0.92 | 0.98 | 0.95 | 478 |
+| Corn_(maize)___healthy | 1.00 | 1.00 | 1.00 | 465 |
+| Grape___Black_rot | 0.98 | 1.00 | 0.99 | 473 |
+| Grape___Esca_(Black_Measles) | 1.00 | 0.98 | 0.99 | 480 |
+| Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | 1.00 | 1.00 | 1.00 | 430 |
+| Grape___healthy | 1.00 | 1.00 | 1.00 | 423 |
+| Orange___Haunglongbing_(Citrus_greening) | 1.00 | 1.00 | 1.00 | 503 |
+| Peach___Bacterial_spot | 0.98 | 1.00 | 0.99 | 459 |
+| Peach___healthy | 1.00 | 0.99 | 0.99 | 432 |
+| Pepper,_bell___Bacterial_spot | 1.00 | 1.00 | 1.00 | 478 |
+| Pepper,_bell___healthy | 1.00 | 0.99 | 0.99 | 497 |
+| Potato___Early_blight | 0.99 | 0.99 | 0.99 | 487 |
+| Potato___Late_blight | 0.98 | 0.99 | 0.98 | 486 |
+| Potato___healthy | 1.00 | 0.98 | 0.99 | 456 |
+| Raspberry___healthy | 1.00 | 1.00 | 1.00 | 445 |
+| Soybean___healthy | 0.98 | 1.00 | 0.99 | 505 |
+| Squash___Powdery_mildew | 1.00 | 1.00 | 1.00 | 434 |
+| Strawberry___Leaf_scorch | 1.00 | 1.00 | 1.00 | 444 |
+| Strawberry___healthy | 1.00 | 1.00 | 1.00 | 456 |
+| Sunflower___Downy_mildew | 0.81 | 0.94 | 0.87 | 18 |
+| Sunflower___Gray_mold | 0.91 | 1.00 | 0.95 | 10 |
+| Sunflower___Leaf_scars | 0.91 | 0.95 | 0.93 | 21 |
+| Sunflower___healthy | 0.95 | 0.95 | 0.95 | 20 |
+| Tomato___Bacterial_spot | 0.96 | 0.99 | 0.98 | 426 |
+| Tomato___Early_blight | 0.96 | 0.91 | 0.93 | 481 |
+| Tomato___Late_blight | 0.97 | 0.96 | 0.96 | 464 |
+| Tomato___Leaf_Mold | 1.00 | 0.97 | 0.98 | 471 |
+| Tomato___Septoria_leaf_spot | 0.96 | 0.94 | 0.95 | 437 |
+| Tomato___Spider_mites Two-spotted_spider_mite | 0.91 | 0.99 | 0.94 | 435 |
+| Tomato___Target_Spot | 0.91 | 0.93 | 0.92 | 457 |
+| Tomato___Tomato_Yellow_Leaf_Curl_Virus | 1.00 | 0.96 | 0.98 | 492 |
+| Tomato___Tomato_mosaic_virus | 1.00 | 1.00 | 1.00 | 449 |
+| Tomato___healthy | 0.98 | 0.98 | 0.98 | 481 |
+| Wheat___BrownRust | 0.76 | 0.84 | 0.80 | 19 |
+| Wheat___Healthy | 0.71 | 0.83 | 0.77 | 18 |
+| Wheat___Mildew | 0.90 | 0.75 | 0.82 | 24 |
+| Wheat___Septoria | 0.88 | 0.71 | 0.79 | 52 |
+| Wheat___YellowRust | 0.66 | 0.83 | 0.73 | 35 |
+ 
+**Per total (17.805 imagini de validare):**
+ 
+| Metrică | Precizie | Recall | F1-score |
+|---|---|---|---|
+| Acuratețe generală | | | **0.98** |
+| Medie macro (fiecare clasă contează la fel) | 0.95 | 0.96 | 0.96 |
+| Medie ponderată (clasele mari contează mai mult) | 0.98 | 0.98 | 0.98 |
+ 
+**Observație importantă:** clasele `Sunflower` și `Wheat` au un număr de imagini de validare mult mai mic (10–52 poze) față de restul claselor (410–505 poze), și scoruri de precizie/recall vizibil mai slabe (66%–95%, față de aproape 90–100% la toate celelalte clase). Cele două specii au fost adăugate ulterior, din seturile de date separate **Sunflower Fruits and Leaves** și **Wheat Disease Dataset**, cu mult mai puține poze disponibile decât restul claselor din New Plant Diseases Dataset. Acest dezechilibru de date explică parțial bias-ul observat mai jos, unde poze de roșii au fost clasificate greșit ca Sunflower.
+ 
+## 5.3. Detectorul binar „frunză / nu frunză"
+ 
+**Scop:** filtrează pozele care nu conțin o frunză (de exemplu poze cu peisaje, obiecte, animale), înainte ca aplicația să ruleze clasificatorul principal de boli. Fără acest filtru, modelul principal ar încerca să încadreze orice poză într-una din cele 47 de clase de boli, chiar dacă poza nu are legătură cu o frunză.
+ 
+**Date de antrenare:**
+- Clasa `frunza`: 1880 de poze, adunate din primele 40 de poze din fiecare clasă a setului de antrenare al clasificatorului principal.
+- Clasa `nu_frunza`: 1800 de poze din setul public **Intel Image Classification** (categorii generale: clădiri, munte, mare, stradă etc.).
+- Împărțire train/valid: 3128 poze antrenare / 552 poze validare (~85%/15%).
+**Arhitectură:**
+- Bază: `MobileNetV2` preantrenat pe ImageNet, greutăți înghețate (`trainable = False`), input 160×160.
+- Strat `Dense(64, activation="relu")`
+- `Dropout(0.3)`
+- Strat de ieșire: `Dense(1, activation="sigmoid")`
+- Optimizator: Adam, learning rate 1e-3, loss `binary_crossentropy`.
+- Early stopping: `patience=3`, monitorizat pe `val_accuracy`, cu restaurarea celor mai bune greutăți.
+**Rezultat antrenare (8 epoci):**
+ 
+| Epocă | Acuratețe antrenare | Acuratețe validare |
+|---|---|---|
+| 1 | 98.3% | 100% |
+| 2 | 99.9% | 100% |
+| 3 | 100% | 100% |
+| 4 | 100% | 100% |
+ 
+Modelul a convers foarte rapid la ~100% acuratețe de validare, ceea ce e de așteptat: distincția „frunză vs. peisaj/clădire/obiect" este mult mai simplă decât clasificarea bolilor.
+ 
+**Convenție de interpretare a scorului:** valoare sub 0.5 → poza este o frunză; valoare peste 0.5 → poza nu este o frunză.
+ 
+## 5.4. Evaluarea clasificatorului principal pe poze reale
+ 
+Pentru a testa performanța reală a aplicației (nu doar acuratețea de validare din timpul antrenării), modelul a fost testat pe **143 de poze reale, niciodată văzute de model**, acoperind 14 clase verificate.
+ 
+| Metrică | Valoare |
+|---|---|
+| Acuratețe top-1 (răspunsul corect e primul afișat) | **68.5%** |
+| Acuratețe top-3 (răspunsul corect e printre primele 3) | **90.9%** |
+ 
+Diferența mare dintre top-1 și top-3 arată că, în majoritatea cazurilor în care modelul greșește prima predicție, răspunsul corect este totuși "aproape" — motiv pentru care aplicația afișează întotdeauna top 3 predicții, nu doar prima.
+ 
+### Acuratețe pe fiecare clasă (top-1)
+ 
+| Clasă | Rezultat |
+|---|---|
+| Apple___Apple_scab | 9/10 (90%) |
+| Apple___Cedar_apple_rust | 9/10 (90%) |
+| Corn_(maize)___Common_rust_ | 7/10 (70%) |
+| Corn_(maize)___Northern_Leaf_Blight | 10/12 (83%) |
+| Grape___Black_rot | 5/8 (62%) |
+| Potato___Early_blight | 6/14 (43%) |
+| Potato___Late_blight | 8/8 (100%) |
+| Tomato___Bacterial_spot | 2/9 (22%) |
+| Tomato___Early_blight | 6/9 (67%) |
+| Tomato___Late_blight | 9/10 (90%) |
+| Tomato___Leaf_Mold | 4/6 (67%) |
+| Tomato___Septoria_leaf_spot | 9/12 (75%) |
+| Tomato___Tomato_Yellow_Leaf_Curl_Virus | 11/15 (73%) |
+| Tomato___Tomato_mosaic_virus | 3/10 (30%) |
+ 
+### Matricea de confuzie – observații
+ 
+Cele mai frecvente confuzii (cel puțin 2 cazuri), obținute din matricea de confuzie generată pe pozele de test:
+ 
+| Nr. cazuri | Planta reală | Model a prezis |
+|---|---|---|
+| 5× | Potato___Early_blight | Potato___Late_blight |
+| 3× | Tomato___Tomato_mosaic_virus | Tomato___Late_blight |
+| 3× | Tomato___Tomato_mosaic_virus | Sunflower___Downy_mildew |
+| 3× | Tomato___Bacterial_spot | Pepper,_bell___Bacterial_spot |
+| 3× | Corn_(maize)___Common_rust_ | Corn_(maize)___Northern_Leaf_Blight |
+| 2× | Tomato___Tomato_Yellow_Leaf_Curl_Virus | Tomato___Late_blight |
+| 2× | Tomato___Early_blight | Sunflower___Leaf_scars |
+| 2× | Tomato___Bacterial_spot | Tomato___Septoria_leaf_spot |
+ 
+**Ce arată aceste confuzii:**
+ 
+- **Potato Early blight ↔ Late blight** – cea mai frecventă confuzie; cele două boli au simptome vizuale asemănătoare pe frunza de cartof (pete brune, necroză).
+- **Tomato mosaic virus** este cea mai slabă clasă (30%): se confundă atât cu Late blight, cât și cu clasele Sunflower – posibil semn că setul de antrenare pentru mozaicul de tomate nu acoperă suficient variația reală a bolii, sau că modelul are un ușor bias spre clasele Sunflower/Wheat, adăugate ulterior în setul de date.
+- **Tomato Bacterial spot** (22%, cea mai slabă clasă) se confundă cu Pepper bell Bacterial spot (aceeași boală, plantă diferită) și cu Septoria leaf spot – ambele apar ca pete mici, întunecate pe frunză.
+- **Corn Common rust ↔ Northern Leaf Blight** – confuzie așteptată, sunt cele mai frecvent confundate boli de porumb în literatura de specialitate.
+## 5.5. Concluzii / limitări cunoscute
+ 
+- Pe setul de validare, modelul are 98% acuratețe generală — foarte ridicată — dar acest lucru nu se traduce direct în performanța pe poze reale (68.5% top-1), semn tipic de supra-adaptare la caracteristicile seturilor de date publice folosite la antrenare.
+- Modelul funcționează foarte bine, atât în validare cât și pe poze reale, pe clase cu simptome vizuale distincte (Potato Late blight 100%, Apple scab/Cedar apple rust 90%).
+- Cele mai slabe clase pe poze reale sunt cele cu simptome asemănătoare altor boli sau altor specii (Tomato Bacterial spot, Tomato mosaic virus, Potato Early blight) — pentru acestea, afișarea top-3 predicții din aplicație compensează parțial acuratețea mai mică de top-1.
+- Confuziile cu clasele Sunflower/Wheat rămân un punct de urmărit față de versiunile anterioare ale modelului; ele au și cel mai mic număr de poze de antrenare/validare dintre toate clasele, ceea ce poate explica atât scorurile mai slabe pe aceste clase, cât și tendința modelului de a le folosi ca răspuns greșit pentru alte boli.
 Ambele modele au fost antrenate în notebook-uri Kaggle, care oferă acces gratuit la GPU (T4x2), eliminând nevoia unui hardware dedicat pentru antrenare.
 
 Rezultatele modelului principal (etichetele claselor) sunt mapate printr-un fișier `label_map.json`, iar informațiile despre boli, plante și sfaturile agricole (în ambele limbi) sunt stocate în fișiere JSON separate, în folderul `data/` (`boli.json`, `plante.json`, `sfaturi_agricole.json`, `sfaturi_generale.json`).
